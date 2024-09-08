@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Modern Car Rental System with seamless renting and returning of vehicles">
+    <meta name="keywords" content="Car Rental, Rent a Car, Vehicle Rental, Car Images">
+    <title>Car Rental System</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body class="light-theme">
+    <!-- Header Section with Fixed Navigation -->
+    <header>
+        <div class="container header-container">
+            <h1 class="logo">Car Rental System</h1>
+            <nav>
+                <ul class="menu">
+                    <li><a href="#rentCar" class="menu-link">Rent a Car</a></li>
+                    <li><a href="#returnCar" class="menu-link">Return a Car</a></li>
+                    <li><a href="#searchCar" class="menu-link">Search Car</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <input type="text" id="globalSearch" placeholder="Search by brand, model or car ID">
+                <button class="search-btn">Search</button>
+            </div>
+            <button class="theme-toggle" id="themeToggle">☀️</button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Rent a Car Section -->
+        <section id="rentCar" class="section">
+            <div class="container">
+                <h2>Available Cars</h2>
+                <div class="scroll-container">
+                    <div class="grid">
+                        <!-- Car Cards will be dynamically inserted here -->
+                    </div>
+                </div>
+
+                <h2>Rent a Car</h2>
+                <form id="rentCarForm" onsubmit="event.preventDefault(); rentCar();">
+                    <div class="form-group">
+                        <label for="rentCarId">Car ID</label>
+                        <input type="text" id="rentCarId" name="rentCarId" required placeholder="Enter Car ID">
+                    </div>
+                    <div class="form-group">
+                        <label for="rentDays">Number of Days</label>
+                        <input type="number" id="rentDays" name="rentDays" required placeholder="Enter number of days">
+                    </div>
+                    <button type="submit" class="btn">Rent Car</button>
+                </form>
+                <div id="rentalResponse" class="response"></div>
+            </div>
+        </section>
+
+        <!-- Return a Car Section -->
+        <section id="returnCar" class="section">
+            <div class="container">
+                <h2>Return a Car</h2>
+                <form id="returnCarForm" onsubmit="event.preventDefault(); returnCar();">
+                    <div class="form-group">
+                        <label for="returnCarId">Car ID to Return</label>
+                        <input type="text" id="returnCarId" name="returnCarId" required placeholder="Enter Car ID">
+                    </div>
+                    <button type="submit" class="btn">Return Car</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Search Car Section -->
+        <section id="searchCar" class="section">
+            <div class="container">
+                <h2>Search Car</h2>
+                <form id="searchCarForm" onsubmit="event.preventDefault(); searchCar();">
+                    <div class="form-group">
+                        <input type="text" id="searchQuery" name="searchQuery" placeholder="Enter brand or model">
+                    </div>
+                    <button type="submit" class="btn">Search</button>
+                </form>
+                <div id="searchResults" class="scroll-container">
+                    <div class="grid"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container footer-container">
+            <p>&copy; 2024 Car Rental System. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- External Scripts -->
+    <script src="main.js" defer></script>
+</body>
+</html>
+
+
